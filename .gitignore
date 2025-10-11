@@ -1,0 +1,34 @@
+# ---- Build artifacts ----
+build/
+CMakeFiles/
+CMakeCache.txt
+cmake_install.cmake
+Debug/
+Release/
+x64/
+*.obj
+*.pdb
+*.exe
+*.dll
+*.lib
+*.exp
+*.ilk
+*.idb
+
+# ---- Visual Studio / VS Code ----
+.vs/
+.vscode/
+*.user
+*.suo
+*.vcxproj.user
+*.VC.db
+*.opendb
+
+# ---- Logs and temporary data ----
+logs/
+data/
+*.log
+
+# ---- Misc ----
+__pycache__/
+node_modules/
