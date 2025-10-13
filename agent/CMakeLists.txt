@@ -3,12 +3,11 @@ add_executable(agent
   src/win_agent.cpp
 )
 
-# Belt + suspenders: add the include dir explicitly for agent
+# belt + suspenders: add the include dir explicitly for agent, too
 target_include_directories(agent PRIVATE
   ${CMAKE_SOURCE_DIR}/common/include
 )
 
-# Link 'common' so PUBLIC includes also propagate
 target_link_libraries(agent PRIVATE common)
 
 if (WIN32 AND ENABLE_WINDOWS_FEATURES)
