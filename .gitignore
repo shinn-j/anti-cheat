@@ -32,3 +32,9 @@ data/
 # Misc caches
 __pycache__/
 node_modules/
+
+# Telemetry data
+data/
+*.csv
+logs/
+build/
