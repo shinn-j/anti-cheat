@@ -24,7 +24,7 @@ int main() {
   }
   csv << "timestamp,x,y,vx,vy,action,ping_ms,cheat_flag\n";
 
-  std::mt19937 rng{std::random_device{}()};
+  std::mt19937 rng{42};
   std::normal_distribution<double> move(0.0, 1.0);
   std::uniform_int_distribution<int> act(0, 3);
   std::uniform_int_distribution<int> ping(30, 70);
