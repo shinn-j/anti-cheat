@@ -1,5 +1,0 @@
-add_library(common STATIC
-  src/log.cpp
-)
-target_include_directories(common PUBLIC include)
-target_compile_options(common PRIVATE /W4 /WX /permissive- /sdl)
