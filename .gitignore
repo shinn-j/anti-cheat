@@ -1,4 +1,4 @@
-# ---- Build artifacts ----
+# Build artifacts
 build/
 CMakeFiles/
 CMakeCache.txt
@@ -8,14 +8,14 @@ Release/
 x64/
 *.obj
 *.pdb
-*.exe
 *.dll
+*.exe
 *.lib
 *.exp
 *.ilk
 *.idb
 
-# ---- Visual Studio / VS Code ----
+# VS / VS Code
 .vs/
 .vscode/
 *.user
@@ -24,11 +24,11 @@ x64/
 *.VC.db
 *.opendb
 
-# ---- Logs and temporary data ----
+# Logs & local data
 logs/
 data/
 *.log
 
-# ---- Misc ----
+# Misc caches
 __pycache__/
 node_modules/
