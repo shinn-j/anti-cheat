@@ -1,8 +1,12 @@
-add_library(common STATIC
+# common/CMakeLists.txt
+cmake_minimum_required(VERSION 3.20)
+
+add_library(common
   src/log.cpp
 )
 
-# export headers in common/include to anything linking common
-target_include_directories(common PUBLIC
-  ${CMAKE_CURRENT_SOURCE_DIR}/include
+# Expose headers in common/include to anyone linking 'common'
+target_include_directories(common
+  PUBLIC
+    ${CMAKE_CURRENT_SOURCE_DIR}/include
 )
