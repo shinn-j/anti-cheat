@@ -1,0 +1,6 @@
+speed
+accel_mag
+speed_roll_mean
+speed_roll_std
+ping_ms
+action
