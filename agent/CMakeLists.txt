@@ -1,16 +1,20 @@
+# agent/CMakeLists.txt
+cmake_minimum_required(VERSION 3.20)
+
 add_executable(agent
   src/agent_main.cpp
-  src/win_agent.cpp
+  src/model_loader.cpp
+  # src/win_agent.cpp      # keep this uncommented only on Windows
 )
 
-# belt + suspenders: add the include dir explicitly for agent, too
-target_include_directories(agent PRIVATE
-  ${CMAKE_SOURCE_DIR}/common/include
+# agent's private includes (for agent/include)
+target_include_directories(agent
+  PRIVATE
+    ${CMAKE_CURRENT_SOURCE_DIR}/include
 )
 
-target_link_libraries(agent PRIVATE common)
-
-if (WIN32 AND ENABLE_WINDOWS_FEATURES)
-  target_link_libraries(agent PRIVATE Psapi)
-  target_compile_definitions(agent PRIVATE ANTI_CHEAT_WINDOWS=1)
-endif()
+# Link with common (this pulls in common/include as PUBLIC)
+target_link_libraries(agent
+  PRIVATE
+    common
+)
