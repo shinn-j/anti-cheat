@@ -117,45 +117,6 @@ You’ll see:
 
 ---
 
-## 🧮 Model Export (Python → C++)
-
-Training in `ai_baseline.ipynb`:
-
-```python
-from sklearn.pipeline import Pipeline
-from sklearn.preprocessing import StandardScaler
-from sklearn.linear_model import LogisticRegression
-import json, time
-
-logreg = Pipeline([
-    ("scaler", StandardScaler()),
-    ("clf", LogisticRegression(max_iter=1000, class_weight="balanced", random_state=42))
-])
-logreg.fit(X_train, y_train)
-
-scaler = logreg.named_steps["scaler"]
-clf = logreg.named_steps["clf"]
-
-export = {
-    "schema_version": 1,
-    "type": "logistic_regression",
-    "features": list(X_train.columns),
-    "scaler_mean": scaler.mean_.tolist(),
-    "scaler_scale": scaler.scale_.tolist(),
-    "coef": clf.coef_[0].tolist(),
-    "intercept": float(clf.intercept_[0]),
-    "decision_threshold": 0.85
-}
-
-os.makedirs("../models", exist_ok=True)
-with open(f"../models/logreg_export.json","w") as f:
-    json.dump(export, f, indent=2)
-```
-
-This JSON is directly consumed by the C++ agent.
-
----
-
 ## 📈 Example Output
 
 ```
