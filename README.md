@@ -13,30 +13,6 @@ It simulates a lightweight in-game monitoring agent that detects irregular motio
 
 ---
 
-## ⚙️ System Architecture
-
-```
-               ┌───────────────────────────┐
-               │      Game Harness          │
-               │ (simulated player data)    │
-               └────────────┬───────────────┘
-                            │ telemetry.csv
-                            ▼
-               ┌───────────────────────────┐
-               │        Agent Core          │
-               │  ├── Rule-Based Detector   │
-               │  └── ML-Based Detector     │
-               │        (LogReg model)      │
-               └────────────┬───────────────┘
-                            │ eval.csv
-                            ▼
-               ┌───────────────────────────┐
-               │     Jupyter Analytics      │
-               │ ROC/PR curves, threshold   │
-               │ sweeps, feature weights    │
-               └───────────────────────────┘
-```
-
 **Components:**
 
 * **`game_harness/`** – Generates synthetic gameplay telemetry (`data/telemetry.csv`).
@@ -227,19 +203,11 @@ Threshold tuned via ROC/PR analysis.
 * Push alerts to **AWS CloudWatch** or **Slack webhook**.
 * Explore **online retraining** to adapt to new cheat patterns.
 
----
 
-## 📄 License
-
-MIT License — open for educational and research use.
-
----
 
 ## 🧑‍💻 Author
 
 **Janie Shin**
-*B.S. Computer Science & Mathematics, Vanderbilt University*
-Cybersecurity & AI Research • Women in Computing • Gen.G ChallengHER
-📧 [Your Email Here] | 💼 [LinkedIn Profile URL]
+
 
 ---
